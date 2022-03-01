@@ -1,4 +1,4 @@
-this.wordle = this.wordle || {},
+﻿this.wordle = this.wordle || {},
 this.wordle.bundle = function(e) {
     "use strict";
     function a(e) {
@@ -1044,7 +1044,7 @@ this.wordle.bundle = function(e) {
             s = e % 100;
         return e + (a[(s - 20) % 10] || a[s] || a[0])
     }
-    var Ha = new Date(2022, 3, 1, 0, 0, 0, 0);
+    var Ha = new Date(2022, 1, 3, 0, 0, 0, 0);
     function Na(e, a) {
         var s = new Date(e),
             t = new Date(a).setHours(0, 0, 0, 0) - s.setHours(0, 0, 0, 0);
@@ -1328,7 +1328,7 @@ this.wordle.bundle = function(e) {
                     }
                     this.$game.addEventListener("game-key-press", (function(a) {
                         var s = a.detail.key;
-                        "←" === s || "Backspace" === s ? e.removeLetter() : "↵" === s || "Enter" === s ? e.submitGuess() : Ba.includes(s.toLowerCase()) && e.addLetter(s.toLowerCase())
+                        "?" === s || "Backspace" === s ? e.removeLetter() : "?" === s || "Enter" === s ? e.submitGuess() : Ba.includes(s.toLowerCase()) && e.addLetter(s.toLowerCase())
                     })),
                     this.$game.addEventListener("game-last-tile-revealed-in-row", (function(a) {
                         e.$keyboard.letterEvaluations = e.letterEvaluations,
@@ -1437,7 +1437,7 @@ this.wordle.bundle = function(e) {
     is.innerHTML = "\n  <button>key</button>\n";
     var ls = document.createElement("template");
     ls.innerHTML = '\n  <div class="spacer"></div>\n';
-    var ds = [["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"], ["-", "a", "s", "d", "f", "g", "h", "j", "k", "l", "-"], ["↵", "z", "x", "c", "v", "b", "n", "m", "←"]],
+    var ds = [["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"], ["-", "a", "s", "d", "f", "g", "h", "j", "k", "l", "-"], ["?", "z", "x", "c", "v", "b", "n", "m", "?"]],
         us = function(e) {
             r(t, e);
             var a = h(t);
@@ -1491,15 +1491,15 @@ this.wordle.bundle = function(e) {
                         s.classList.add("row"),
                         a.forEach((function(e) {
                             var a;
-                            if (e >= "a" && e <= "z" || "←" === e || "↵" === e) {
-                                if ((a = is.content.cloneNode(!0).firstElementChild).dataset.key = e, a.textContent = e, "←" === e) {
+                            if (e >= "a" && e <= "z" || "?" === e || "?" === e) {
+                                if ((a = is.content.cloneNode(!0).firstElementChild).dataset.key = e, a.textContent = e, "?" === e) {
                                     var t = document.createElement("game-icon");
                                     t.setAttribute("icon", "backspace"),
                                     a.textContent = "",
                                     a.appendChild(t),
                                     a.classList.add("one-and-a-half")
                                 }
-                                "↵" == e && (a.textContent = "enter", a.classList.add("one-and-a-half"))
+                                "?" == e && (a.textContent = "enter", a.classList.add("one-and-a-half"))
                             } else
                                 (a = ls.content.cloneNode(!0).firstElementChild).classList.add(1 === e.length ? "half" : "one");
                             s.appendChild(a)
@@ -1852,17 +1852,17 @@ this.wordle.bundle = function(e) {
                                             switch (e) {
                                             case Ma:
                                                 a = function(e) {
-                                                    return e ? "🟧" : "🟩"
+                                                    return e ? "?" : "?"
                                                 }(i);
                                                 break;
                                             case Ia:
                                                 a = function(e) {
-                                                    return e ? "🟦" : "🟨"
+                                                    return e ? "?" : "?"
                                                 }(i);
                                                 break;
                                             case Oa:
                                                 a = function(e) {
-                                                    return e ? "⬛" : "⬜"
+                                                    return e ? "?" : "?"
                                                 }(r)
                                             }
                                             d += a
@@ -2065,4 +2065,5 @@ this.wordle.bundle = function(e) {
         value: !0
     }), e
 }({});
+
 
