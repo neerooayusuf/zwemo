@@ -1842,7 +1842,7 @@ this.wordle.bundle = function(e) {
                                     r = JSON.parse(window.localStorage.getItem(j)),
                                     i = JSON.parse(window.localStorage.getItem(S)),
                                     l = "F1 Wordle ".concat(s);
-                                l += " ".concat(n ? t : "X", "/").concat(1),
+                                l += " ".concat(n ? t : "X", "/").concat(6),
                                 o && (l += "*");
                                 var d = "";
                                 return a.forEach((function(e) {
